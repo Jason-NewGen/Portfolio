@@ -8,6 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+/* checks if user's system has a dark mode preference */
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -33,5 +34,27 @@ body {
 }
 
 html {
-  scroll-behavior: smooth,
+  scroll-behavior: smooth;
+}
+
+/* Style the scrollbar's track */
+::-webkit-scrollbar-track {
+  background: black; /* Track color */
+}
+
+/* Style the scrollbar itself */
+::-webkit-scrollbar {
+  width: 6px; /* Width of the scrollbar */
+}
+
+/* Style the thumb (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background-color: rgb(var(--foreground-rgb)); /* Scrollbar thumb color */
+  border-radius: 10px; /* Roundness of the thumb */
+  border: 1px solid #f1f1f1; /* Padding around the thumb */
+}
+
+/* Change the thumb color on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(var(--foreground-rgb));
 }

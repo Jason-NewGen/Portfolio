@@ -14,7 +14,9 @@ const StyledSidebar = styled(Box)(({
     left: 0,
     width: '15vw',
     height: "100%",
-    backgroundColor: 'white',
+    backgroundColor: 'black',
+    borderRight: 'solid',
+    borderColor: '#18ad55'
 }));
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, setSidebarOpen }) => {
@@ -22,7 +24,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, setSidebarOpen }) => {
         <Drawer open={isOpen} onClose={() => setSidebarOpen(false)}>
             <StyledSidebar>
                 <Box width="100%">
-                    <Typography>
+                    <Typography color="#18ad55" display="flex" justifyContent="center" fontFamily="monospace" mt={1}>
                         Table of Contents
                     </Typography>
                 </Box>
