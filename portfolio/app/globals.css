@@ -56,5 +56,6 @@ html {
 
 /* Change the thumb color on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(var(--foreground-rgb));
+  background-color: #18ad55;
+  border-color: #18ad55;
 }
