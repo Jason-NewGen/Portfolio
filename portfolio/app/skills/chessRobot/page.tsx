@@ -42,7 +42,7 @@ export default function ChessRobotBlog(){
         import('mui-player').then(({ default: MuiPlayer }) => {
             const player = new MuiPlayer({
                 container: '#mui-player',
-                src: '../images/ChessRobotDemo.mp4', // Update the path to your video file
+                src: '../files/ChessRobotDemo.mp4', // Update the path to your video file
                 autoplay: true,
                 // Add other options as needed
             });
