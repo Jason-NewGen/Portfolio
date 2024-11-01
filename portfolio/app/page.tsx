@@ -153,7 +153,7 @@ export default function Home(){
             startIcon={<BouncingArrow sx={{
               color: "white"
             }}/>}
-            onClick={() => scrollToSection(pageTwo)}
+            onClick={() => scrollToSection(pageTwo)}  
           />
         </Box>
       </PageSection>
