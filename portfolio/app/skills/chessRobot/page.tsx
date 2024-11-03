@@ -55,7 +55,7 @@ export default function ChessRobotBlog(){
             {/* Header */}
             <Box height="100vh" display="flex" width="100%" flexDirection="column" alignItems="center" ref={pageOne}>
                 <Box display="flex" width="100%" justifyContent="center">
-                <Monospace fontSize="8vh" my={3} textAlign="center">King's Gambit</Monospace>
+                <Monospace fontSize="8vh" my={3} textAlign="center">King&apos;s Gambit</Monospace>
                 </Box>
                 {/* Video File + Caption */}
                 <Box display="flex" width="100%" justifyContent="center" alignItems="center" flexDirection="column">
@@ -80,7 +80,7 @@ export default function ChessRobotBlog(){
                         textDecoration: 'underline'
                     }} py={2}>Introduction</Monospace>
                     <ContentText>
-                        The King's Gambit is the name for our fully autonomous Chess Robot, capable of recognizing, computing, and physically executing chess moves. This
+                        The King&apos;s Gambit is the name for our fully autonomous Chess Robot, capable of recognizing, computing, and physically executing chess moves. This
                         project combines hardware and software to design an autonomous, intelligent robot capable of playing a full game of chess against a human opponent.
                         This product aims to expand the scope of digital engines to the phyiscal world. Playing against the robot will allow anyone to interact directly with
                         the mind of the greatest chess players.

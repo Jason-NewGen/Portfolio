@@ -32,14 +32,14 @@ const ImageHolder: React.FC<ImageHolderProps> = ({
     if (intervalRef.current) clearInterval(intervalRef.current);
   };
 
-  const startRotationInterval = () => {
+  const startRotationInterval = React.useCallback(() => {
     if (isRotating && imageCount > 1) {
       clearRotationInterval();
       intervalRef.current = setInterval(() => {
         nextPicture();
       }, 4000);
     }
-  };
+  }, [isRotating, imageCount]);
 
   const prevPicture = () => {
     if (!isAnimating) {
@@ -56,7 +56,7 @@ const ImageHolder: React.FC<ImageHolderProps> = ({
     }
   };
 
-  const nextPicture = () => {
+  const nextPicture = React.useCallback(() => {
     if (!isAnimating) {
       clearRotationInterval();
       setDirection('next');
@@ -67,12 +67,12 @@ const ImageHolder: React.FC<ImageHolderProps> = ({
         startRotationInterval();
       }, animationDuration);
     }
-  };
+  }, [isAnimating, imageCount, startRotationInterval]);
 
   React.useEffect(() => {
     if (isRotating) startRotationInterval();
     return () => clearRotationInterval(); // Cleanup on unmount
-  }, [isRotating, imageList]);
+  }, [isRotating, imageList, startRotationInterval]);
 
   // Calculate indices for previous and next images
   const prevImageIndex = (currentImageIndex - 1 + imageCount) % imageCount;
