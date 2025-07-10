@@ -55,6 +55,11 @@ export default function Home(){
       skills: ["Hackathon Winner", "AI", "MongoDB", "React", "Typescript", "Node.JS", "Auth",],
       learnMore: "https://github.com/mv5903/dragonhacks2024"
     },
+    {
+      title: "ReLearn Craft",
+      image: "images/minecraftRL.jpg",
+      skills: ["AI", "Distributed Data Parallelism", "Reinforcement Learning", "numpy", "python"],
+    }
   ]
 
   const PageSection = styled(Box)(({

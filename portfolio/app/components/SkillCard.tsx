@@ -9,14 +9,27 @@ import Monospace from './styled/Monospace';
 import CardHeader from '@mui/material/CardHeader';
 import Chip from './styled/Chip';
 
-
-const SkillCardBase = styled(Card)(({
-    borderColor: "#18ad55",
-    borderWidth: "2px",
-    backgroundColor: "inherit",
-    width: "100%",
-    height: "100%",
-}))
+const SkillCardBase = styled(
+    Card, 
+    { shouldForwardProp: (prop) => prop !== 'hoverable'} // shouldForwardProp is kind of like a failsafe, assuming the prop that gets passed isn't "hoverable", an error won't occur. Long answer is that the prop won't get forwarded to the DOM if it isn't "hoverable" before the element renders, causing no issue of it returning an error
+    )<{hoverable: boolean}>(({hoverable, theme}) => ({
+        borderColor: "#18ad55",
+        borderWidth: 2,
+        backgroundColor: "inherit",
+        borderStyle: 'solid',
+        width: "100%",
+        height: "100%",
+        transition: hoverable
+            ? 'transform 0.3s ease, border-color 0.3s ease'
+            : undefined,
+        ...(hoverable && {
+            '&:hover': {
+                transform: 'scale(1.01)',
+                borderColor: 'white',
+                cursor: 'pointer',
+            },
+        }),
+}));
 
 interface SkillCardProps {
     title: string;
@@ -44,12 +57,10 @@ const SkillCard: React.FC<SkillCardProps> = ({
     title,
 }) => {
 
-    const handleCardClick = {
-
-    }
+    const hoverable = Boolean(learnMore);
 
     const SkillCardContent = (
-        <SkillCardBase>
+        <SkillCardBase hoverable={hoverable}>
             <CardMedia
                 sx={{
                     height: "50%"
