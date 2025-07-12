@@ -59,6 +59,7 @@ export default function Home(){
       title: "ReLearn Craft",
       image: "images/minecraftRL.jpg",
       skills: ["AI", "Distributed Data Parallelism", "Reinforcement Learning", "numpy", "python"],
+      learnMore: "/skills/reLearnCraft"
     }
   ]
 
@@ -93,9 +94,8 @@ export default function Home(){
         disableRipple
       >
         <FormatListBulletedIcon sx={{
-          color: 'white',
-          mr: 1, 
-          mt: 1,
+          color: 'white', 
+          mt: 2,
           "&:hover": {
             color: '#18ad55'
           }

@@ -9,10 +9,12 @@ import BouncingArrow from '@/app/components/BouncingArrow';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import {GitHub, Description} from '@mui/icons-material'
-
+import HomeIcon from '@mui/icons-material/Home';
+import { useRouter } from 'next/navigation'
 
 export default function ChessRobotBlog(){
 
+    const router = useRouter();
     const pageOne = useRef<HTMLDivElement>(null);
     const pageTwo = useRef<HTMLDivElement>(null);
 
@@ -52,6 +54,20 @@ export default function ChessRobotBlog(){
 
     return (
         <Box>
+            <Button
+                disableRipple
+                onClick={() => {router.push('/')}}
+            >
+                <HomeIcon
+                    sx={{
+                        color: "white",
+                        mt: 1,
+                        "&:hover": {
+                            color: '#18ad55'
+                        }
+                    }}
+                />
+            </Button>
             {/* Header */}
             <Box height="100vh" display="flex" width="100%" flexDirection="column" alignItems="center" ref={pageOne}>
                 <Box display="flex" width="100%" justifyContent="center">
